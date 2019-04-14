@@ -149,8 +149,8 @@ module.exports = {
       name: 'users-permissions',
       key: 'grant'
     }).get();
-
-    const [ protocol, host ] = strapi.config.url.split('://');
+    const url = strapi.config.currentEnvironment.domain;
+    const [ protocol, host ] = url.split('://');
     _.defaultsDeep(grantConfig, { server: { protocol, host } });
 
     const provider = process.platform === 'win32' ? ctx.request.url.split('\\')[2] : ctx.request.url.split('/')[2];

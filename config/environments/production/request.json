@@ -4,7 +4,7 @@
     "client": "cookie",
     "key": "strapi.sid",
     "prefix": "strapi:sess:",
-    "secretKeys": ["mySecretKey1", "mySecretKey2"],
+    "secretKeys": ["awsfaw+priu8135a9034r", "84s6d1f6sdf88ef6y13t1T"],
     "httpOnly": true,
     "maxAge": 86400000,
     "overwrite": true,
