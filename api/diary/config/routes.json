@@ -1,0 +1,36 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/diaries/:date",
+      "handler": "Diary.findByDate",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/diaries",
+      "handler": "Diary.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/diaries/:id",
+      "handler": "Diary.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/diaries/:id",
+      "handler": "Diary.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

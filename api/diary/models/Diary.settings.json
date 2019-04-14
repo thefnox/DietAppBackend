@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "diaries",
+  "info": {
+    "name": "diary",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "date": {
+      "default": "",
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "diaryentries": {
+      "collection": "diaryentry",
+      "via": "diary"
+    }
+  }
+}

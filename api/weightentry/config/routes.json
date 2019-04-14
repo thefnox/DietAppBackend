@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/weightentries",
+      "handler": "Weightentry.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/weightentries/count",
+      "handler": "Weightentry.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/weightentries/:id",
+      "handler": "Weightentry.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/weightentries",
+      "handler": "Weightentry.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/weightentries/:id",
+      "handler": "Weightentry.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/weightentries/:id",
+      "handler": "Weightentry.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

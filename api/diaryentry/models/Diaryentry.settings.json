@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "diaryentries",
+  "info": {
+    "name": "diaryentry",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "portions": {
+      "default": 1,
+      "type": "integer"
+    },
+    "food": {
+      "model": "food"
+    },
+    "diary": {
+      "model": "diary",
+      "via": "diaryentries"
+    }
+  }
+}

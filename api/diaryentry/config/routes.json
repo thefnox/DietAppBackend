@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/diaryentries",
+      "handler": "Diaryentry.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/diaryentries/:id",
+      "handler": "Diaryentry.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/diaryentries/:id",
+      "handler": "Diaryentry.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "connection": "default",
+  "collectionName": "foods",
+  "info": {
+    "name": "food",
+    "description": "Each food item"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "calories": {
+      "default": "",
+      "type": "integer"
+    },
+    "protein": {
+      "default": "",
+      "type": "integer"
+    },
+    "carbs": {
+      "default": "",
+      "type": "integer"
+    },
+    "fat": {
+      "default": "",
+      "type": "integer"
+    },
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "portion": {
+      "default": "",
+      "type": "integer"
+    },
+    "barcode": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

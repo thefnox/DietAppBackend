@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "weightentries",
+  "info": {
+    "name": "weightentry",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "date": {
+      "default": "",
+      "type": "date",
+      "required": true
+    },
+    "weight": {
+      "default": "",
+      "type": "integer"
+    },
+    "user": {
+      "model": "user",
+      "plugin": "users-permissions"
+    }
+  }
+}

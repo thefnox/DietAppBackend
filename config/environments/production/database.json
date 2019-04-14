@@ -1,0 +1,17 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-bookshelf",
+      "settings": {
+        "client": "postgres",
+        "host": "dietappbackend.cy1u7p8mkmss.eu-north-1.rds.amazonaws.com",
+        "port": 5432,
+        "database": "DietAppBackend",
+        "username": "test",
+        "password": "testpassw0rd"
+      },
+      "options": {}
+    }
+  }
+}
