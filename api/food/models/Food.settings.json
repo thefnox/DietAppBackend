@@ -42,6 +42,46 @@
     "barcode": {
       "default": "",
       "type": "string"
+    },
+    "sodium": {
+      "default": 0,
+      "type": "integer"
+    },
+    "transFat": {
+      "default": 0,
+      "type": "integer"
+    },
+    "sugar": {
+      "default": 0,
+      "type": "integer"
+    },
+    "fiber": {
+      "default": 0,
+      "type": "integer"
+    },
+    "vitaminA": {
+      "default": 0,
+      "type": "integer"
+    },
+    "vitaminC": {
+      "default": 0,
+      "type": "integer"
+    },
+    "vitaminB12": {
+      "default": 0,
+      "type": "integer"
+    },
+    "vitaminD": {
+      "default": 0,
+      "type": "integer"
+    },
+    "potassium": {
+      "default": 0,
+      "type": "integer"
+    },
+    "saturatedFat": {
+      "default": 0,
+      "type": "integer"
     }
   }
 }
