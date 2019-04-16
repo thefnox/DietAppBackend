@@ -50,7 +50,7 @@ module.exports = {
   create: async (ctx) => {
     const body = ctx.request.body;
     body.user = ctx.state.user.id;
-    body.date = moment(body.date).hour(0).minute(0).second(1).toDate();
+    body.date = moment(body.date).utcOffset(0).set({hour:0,minute:0,second:0,millisecond:0}).toDate();
     await strapi.services.weightentry.add(body);
     let latestWeight = await strapi.services.weightentry.fetchAll({ '_sort': 'date:DESC', '_limit': 1 });
     latestWeight = latestWeight.serialize().pop();
