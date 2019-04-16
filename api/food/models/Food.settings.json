@@ -12,19 +12,19 @@
   },
   "attributes": {
     "calories": {
-      "default": "",
+      "default": 0,
       "type": "integer"
     },
     "protein": {
-      "default": "",
+      "default": 0,
       "type": "integer"
     },
     "carbs": {
-      "default": "",
+      "default": 0,
       "type": "integer"
     },
     "fat": {
-      "default": "",
+      "default": 0,
       "type": "integer"
     },
     "name": {
@@ -36,7 +36,7 @@
       "type": "text"
     },
     "portion": {
-      "default": "",
+      "default": 1,
       "type": "integer"
     },
     "barcode": {
