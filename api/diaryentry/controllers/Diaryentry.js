@@ -59,7 +59,7 @@ module.exports = {
    */
 
   update: async (ctx, next) => {
-    const entry = await strapi.services.diary.fetch(ctx.params);
+    const entry = await strapi.services.diaryentry.fetch(ctx.params);
     const body = JSON.parse(ctx.request.body);
     if (entry) {
       const user = await entry.related('user').fetch();
@@ -79,7 +79,7 @@ module.exports = {
    */
 
   destroy: async (ctx, next) => {
-    const entry = await strapi.services.diary.fetch(ctx.params);
+    const entry = await strapi.services.diaryentry.fetch(ctx.params);
     if (entry) {
       const user = await entry.related('user').fetch();
       if(user.id === ctx.state.user.id) {
