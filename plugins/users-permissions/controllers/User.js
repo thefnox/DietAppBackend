@@ -53,7 +53,7 @@ module.exports = {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
     }
 
-    const body = JSON.parse(ctx.request.body);
+    const body = ctx.request.body;
 
     const data = _.pick( body, ['calorieTarget', 'weight', 'carbTarget', 'fatTarget', 'proteinTarget']);
 

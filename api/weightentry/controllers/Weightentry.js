@@ -48,7 +48,7 @@ module.exports = {
    */
 
   create: async (ctx) => {
-    const body = JSON.parse(ctx.request.body);
+    const body = ctx.request.body;
     body.user = ctx.state.user.id;
     body.date = moment(body.date).hour(0).minute(0).second(1).toDate();
     await strapi.services.weightentry.add(body);
@@ -67,7 +67,7 @@ module.exports = {
 
   update: async (ctx, next) => {
     const entry = await strapi.services.weightentry.fetch(ctx.params);
-    const body = JSON.parse(ctx.request.body);
+    const body = ctx.request.body;
     if (entry) {
       const user = await entry.related('user').fetch();
       if (user.id === ctx.state.user.id) {
