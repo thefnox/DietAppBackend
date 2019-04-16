@@ -60,12 +60,16 @@ module.exports = {
 
   update: async (ctx, next) => {
     const entry = await strapi.services.diary.fetch(ctx.params);
-    const user = await entry.related('user').fetch();
     const body = JSON.parse(ctx.request.body);
-    if (entry && user.id === ctx.state.user.id) {
-      return strapi.services.diaryentry.edit(ctx.params, body) ;
+    if (entry) {
+      const user = await entry.related('user').fetch();
+      if (user.id === ctx.state.user.id) {
+        return strapi.services.diaryentry.edit(ctx.params, body) ;
+      } else {
+        return ctx.unauthorized();
+      }
     }
-    return ctx.unauthorized();
+    return ctx.notFound();
   },
 
   /**
@@ -76,9 +80,14 @@ module.exports = {
 
   destroy: async (ctx, next) => {
     const entry = await strapi.services.diary.fetch(ctx.params);
-    if (entry && entry.user.id === ctx.state.user.id) {
-      return strapi.services.diaryentry.remove(ctx.params);
+    if (entry) {
+      const user = await entry.related('user').fetch();
+      if(user.id === ctx.state.user.id) {
+        return strapi.services.diaryentry.remove(ctx.params);
+      } else {
+        return ctx.unauthorized();
+      }
     }
-    return ctx.unauthorized();
+    return ctx.notFound();
   }
 };
