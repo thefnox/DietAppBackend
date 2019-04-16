@@ -60,7 +60,7 @@ module.exports = {
 
   update: async (ctx, next) => {
     const entry = await strapi.services.diaryentry.fetch(ctx.params);
-    const body = JSON.parse(ctx.request.body);
+    const body = ctx.request.body;
     if (entry) {
       return strapi.services.diaryentry.edit(ctx.params, body);
     }
