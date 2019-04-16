@@ -62,12 +62,7 @@ module.exports = {
     const entry = await strapi.services.diaryentry.fetch(ctx.params);
     const body = JSON.parse(ctx.request.body);
     if (entry) {
-      const diary = await entry.related('diary').fetch();
-      if(diary.user.id === ctx.state.user.id) {
-        return strapi.services.diaryentry.edit(ctx.params, body) ;
-      } else {
-        return ctx.unauthorized();
-      }
+      return strapi.services.diaryentry.edit(ctx.params, body);
     }
     return ctx.notFound();
   },
@@ -81,12 +76,7 @@ module.exports = {
   destroy: async (ctx, next) => {
     const entry = await strapi.services.diaryentry.fetch(ctx.params);
     if (entry) {
-      const diary = await entry.related('diary').fetch();
-      if(diary.user.id === ctx.state.user.id) {
-        return strapi.services.diaryentry.remove(ctx.params);
-      } else {
-        return ctx.unauthorized();
-      }
+      return strapi.services.diaryentry.remove(ctx.params);
     }
     return ctx.notFound();
   }
