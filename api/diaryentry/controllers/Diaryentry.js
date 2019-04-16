@@ -62,8 +62,8 @@ module.exports = {
     const entry = await strapi.services.diaryentry.fetch(ctx.params);
     const body = JSON.parse(ctx.request.body);
     if (entry) {
-      const user = await entry.related('user').fetch();
-      if (user.id === ctx.state.user.id) {
+      const diary = await entry.related('diary').fetch();
+      if(diary.user.id === ctx.state.user.id) {
         return strapi.services.diaryentry.edit(ctx.params, body) ;
       } else {
         return ctx.unauthorized();
@@ -81,8 +81,8 @@ module.exports = {
   destroy: async (ctx, next) => {
     const entry = await strapi.services.diaryentry.fetch(ctx.params);
     if (entry) {
-      const user = await entry.related('user').fetch();
-      if(user.id === ctx.state.user.id) {
+      const diary = await entry.related('diary').fetch();
+      if(diary.user.id === ctx.state.user.id) {
         return strapi.services.diaryentry.remove(ctx.params);
       } else {
         return ctx.unauthorized();
