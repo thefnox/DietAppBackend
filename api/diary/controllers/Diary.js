@@ -31,17 +31,19 @@ module.exports = {
    */
 
   findByDate: async (ctx) => {
-    let diary = await strapi.services.diary.fetch({
+    let diary = await strapi.services.diary.fetchAll({
       user: ctx.state.user.id,
-      date: moment(ctx.params.date).hour(0).minute(0).second(1).toDate()
+      date: moment(ctx.params.date).utcOffset(0).set({hour:0,minute:0,second:0,millisecond:0}).toDate(),
+      '_limit': 1
     });
-    if (!diary) {
-      diary = await strapi.services.diary.add({
+    if (diary.length === 0) {
+      return strapi.services.diary.add({
         user: ctx.state.user.id,
-        date: moment().hour(0).minute(0).second(1).toDate()
+        date: moment(ctx.params.date).utcOffset(0).set({hour:0,minute:0,second:0,millisecond:0}).toDate()
       });
+    } else {
+      return diary.pop();
     }
-    return diary;
   },
 
   /**
